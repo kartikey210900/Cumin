@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import loginImage from "./assets/login.jpg"; // Adjust path as necessary
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -16,14 +15,14 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-800">
       <div className="w-full max-w-sm px-4 py-8">
-        {/* Add Image here */}
-        <img
-          src={loginImage}
-          alt="Login"
-          className="w-full h-auto mb-6 rounded-lg shadow-lg"
-        />
-
         <h1 className="text-3xl font-bold text-center mb-4">Login</h1>
+
+        {/* Image reference */}
+        <img
+          src="/images/light.jpg"
+          alt="Light"
+          className="w-full h-auto mt-4"
+        />
 
         <div className="mb-4">
           <input
@@ -34,7 +33,6 @@ const Login = () => {
             className="w-full p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-
         <div className="mb-6">
           <input
             type="password"
@@ -44,7 +42,6 @@ const Login = () => {
             className="w-full p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-
         <button
           onClick={handleLogin}
           className="w-full py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:opacity-80"

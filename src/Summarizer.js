@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./styles.css"; // Importing custom CSS file
-import lightImage from "./assets/light.jpg"; // Adjust path as necessary
 
 const Summarizer = () => {
   const [text, setText] = useState(""); // Input text
@@ -59,7 +58,11 @@ const Summarizer = () => {
       <div className="w-full max-w-2xl px-6 py-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
         {/* Image */}
         <div className="text-center mb-6">
-          <img src={lightImage} alt="Light" className="w-full h-auto mt-4" />
+          <img
+            src="/images/light.jpg" // Update to the correct path in the public folder
+            alt="Light"
+            className="w-full h-auto mt-4"
+          />
         </div>
 
         <div className="text-center">

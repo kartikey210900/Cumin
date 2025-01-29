@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import feedbackImage from "./assets/feedback.jpg"; // Adjust the path according to your project structure
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState(""); // Feedback state
@@ -26,7 +25,7 @@ const Feedback = () => {
       <div className="w-full max-w-2xl px-4 py-8">
         {/* Image Section */}
         <img
-          src={feedbackImage}
+          src="/images/feedback.jpg" // Reference the image from the public/images folder
           alt="Feedback"
           className="w-full h-auto mb-6 rounded-lg shadow-lg"
         />
