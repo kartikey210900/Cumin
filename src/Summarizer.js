@@ -59,7 +59,7 @@ const Summarizer = () => {
         {/* Image */}
         <div className="text-center mb-6">
           <img
-            src="/images/light.jpg" // Update to the correct path in the public folder
+            src="/images/light.jpg" // Referencing the image from public/images
             alt="Light"
             className="w-full h-auto mt-4"
           />

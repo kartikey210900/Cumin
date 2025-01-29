@@ -25,7 +25,7 @@ const Feedback = () => {
       <div className="w-full max-w-2xl px-4 py-8">
         {/* Image Section */}
         <img
-          src="/images/feedback.jpg" // Reference the image from the public/images folder
+          src="/images/feedback.jpg" // Reference the image from public/images
           alt="Feedback"
           className="w-full h-auto mb-6 rounded-lg shadow-lg"
         />

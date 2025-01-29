@@ -16,14 +16,6 @@ const Login = () => {
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-800">
       <div className="w-full max-w-sm px-4 py-8">
         <h1 className="text-3xl font-bold text-center mb-4">Login</h1>
-
-        {/* Image reference */}
-        <img
-          src="/images/light.jpg"
-          alt="Light"
-          className="w-full h-auto mt-4"
-        />
-
         <div className="mb-4">
           <input
             type="text"
