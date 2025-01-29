@@ -19,6 +19,18 @@ const Summarizer = () => {
     }
   }, [navigate]);
 
+  // Check dark mode preference in localStorage
+  useEffect(() => {
+    const storedMode = localStorage.getItem("isDarkMode");
+    if (storedMode) {
+      setIsDarkMode(JSON.parse(storedMode));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
+
   const handleSummarize = async () => {
     setLoading(true);
     setSummary(""); // Clear previous summary
@@ -49,6 +61,11 @@ const Summarizer = () => {
     navigate("/feedback"); // Navigate to feedback page
   };
 
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+    if (error) setError(""); // Clear the error when the user starts typing
+  };
+
   return (
     <div
       className={`min-h-screen flex flex-col justify-center items-center ${
@@ -56,15 +73,6 @@ const Summarizer = () => {
       }`}
     >
       <div className="w-full max-w-2xl px-6 py-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-        {/* Image */}
-        <div className="text-center mb-6">
-          <img
-            src="/images/light.jpg" // Referencing the image from public/images
-            alt="Light"
-            className="w-full h-auto mt-4"
-          />
-        </div>
-
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 mb-6">
             CUMIN - Text Summarizer
@@ -82,7 +90,7 @@ const Summarizer = () => {
           rows="6"
           placeholder="Enter text to summarize..."
           value={text}
-          onChange={(e) => setText(e.target.value)}
+          onChange={handleTextChange}
         ></textarea>
 
         <button

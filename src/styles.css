@@ -1,9 +1,9 @@
 /* Import more stylish font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
 /* Global Styles */
 body {
-  font-family: 'Montserrat', sans-serif; /* Sleek and modern font */
+  font-family: "Montserrat", sans-serif; /* Sleek and modern font */
   background-color: #f7f7f7; /* Light Mode Background */
   color: #333;
   margin: 0;
@@ -13,16 +13,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('C:/Users/offic/Desktop/text-summarizer/light.jpg'); /* Replace with your image URL */
+  background-image: url("/public/images/light.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   animation: fadeIn 1.5s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for mode switch */
 }
 
 .dark body {
   background-color: #121212; /* Dark Mode Background */
-  background-image: url('C:/Users/offic/Desktop/text-summarizer/dark.jpg'); /* Replace with your dark mode image URL */
+  background-image: url("/public/images/light.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -75,9 +76,9 @@ body {
 }
 
 .toggle-switch {
-  position: absolute; /* Ensure it is positioned relative to the page */
-  top: 10px; /* Adjust distance from the top of the page */
-  right: 10px; /* Adjust distance from the right of the page */
+  position: absolute;
+  top: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -89,7 +90,7 @@ body {
 }
 
 .dark .toggle-switch {
-  background-color: rgba(42, 42, 42, 0.8); /* Dark mode toggle styling */
+  background-color: rgba(42, 42, 42, 0.8);
 }
 
 .toggle-switch input {
@@ -130,6 +131,7 @@ button:hover {
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+  opacity: 0.5;
 }
 
 /* Styling for the Text Area */
@@ -149,7 +151,7 @@ textarea {
 textarea:focus {
   outline: none;
   border-color: #3a80d5;
-  transform: scale(1.02);
+  box-shadow: 0 0 5px rgba(58, 128, 213, 0.6);
 }
 
 .dark textarea {
