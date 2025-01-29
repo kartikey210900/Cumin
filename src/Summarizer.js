@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./styles.css"; // Importing custom CSS file
+import lightImage from "./assets/light.jpg"; // Adjust path as necessary
 
 const Summarizer = () => {
   const [text, setText] = useState(""); // Input text
@@ -51,9 +52,16 @@ const Summarizer = () => {
 
   return (
     <div
-      className={`min-h-screen flex flex-col justify-center items-center ${isDarkMode ? "dark" : ""}`}
+      className={`min-h-screen flex flex-col justify-center items-center ${
+        isDarkMode ? "dark" : ""
+      }`}
     >
       <div className="w-full max-w-2xl px-6 py-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+        {/* Image */}
+        <div className="text-center mb-6">
+          <img src={lightImage} alt="Light" className="w-full h-auto mt-4" />
+        </div>
+
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 mb-6">
             CUMIN - Text Summarizer
