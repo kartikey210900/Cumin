@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import feedbackImage from "./assets/feedback.jpg"; // Adjust the path according to your project structure
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState(""); // Feedback state
@@ -23,7 +24,16 @@ const Feedback = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-50 dark:bg-gray-800">
       <div className="w-full max-w-2xl px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4 text-center">We Value Your Feedback</h1>
+        {/* Image Section */}
+        <img
+          src={feedbackImage}
+          alt="Feedback"
+          className="w-full h-auto mb-6 rounded-lg shadow-lg"
+        />
+
+        <h1 className="text-3xl font-bold mb-4 text-center">
+          We Value Your Feedback
+        </h1>
 
         {!submitted ? (
           <form onSubmit={handleFeedbackSubmit}>
